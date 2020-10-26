@@ -7,18 +7,18 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Title from './Title';
+import { Checkbox } from '@material-ui/core';
 
 // Generate Order Data
-function createData(id, date, name, shipTo, paymentMethod, amount) {
-  return { id, date, name, shipTo, paymentMethod, amount };
+function createData(id, course, room, weekday, time, isPrepared) {
+  return { id, course, room, weekday, time, isPrepared };
 }
 
 const rows = [
-  createData(0, '16 Mar, 2019', 'Elvis Presley', 'Tupelo, MS', 'VISA ⠀•••• 3719', 312.44),
-  createData(1, '16 Mar, 2019', 'Paul McCartney', 'London, UK', 'VISA ⠀•••• 2574', 866.99),
-  createData(2, '16 Mar, 2019', 'Tom Scholz', 'Boston, MA', 'MC ⠀•••• 1253', 100.81),
-  createData(3, '16 Mar, 2019', 'Michael Jackson', 'Gary, IN', 'AMEX ⠀•••• 2000', 654.39),
-  createData(4, '15 Mar, 2019', 'Bruce Springsteen', 'Long Branch, NJ', 'VISA ⠀•••• 5919', 212.79),
+  createData(0, 'Software Project Management', 'A2.606', "Monday", "08:00", true),
+  createData(1, 'Discrete Math', 'A2.308', 'Tuesday', "08:00", false),
+  createData(2, 'Web Application', 'A2.411', 'Tuesday', "13:15", true),
+  createData(3, 'Entrepreneurship', 'L.101', "Thursday", "13:15", true)
 ];
 
 function preventDefault(event) {
@@ -35,32 +35,32 @@ export default function Orders() {
   const classes = useStyles();
   return (
     <React.Fragment>
-      <Title>Recent Orders</Title>
+      <Title>Upcoming Classes</Title>
       <Table size="small">
         <TableHead>
           <TableRow>
-            <TableCell>Date</TableCell>
-            <TableCell>Name</TableCell>
-            <TableCell>Ship To</TableCell>
-            <TableCell>Payment Method</TableCell>
-            <TableCell align="right">Sale Amount</TableCell>
+            <TableCell>Course</TableCell>
+            <TableCell>Room</TableCell>
+            <TableCell>Weekday</TableCell>
+            <TableCell>Time</TableCell>
+            <TableCell>Session</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map((row) => (
             <TableRow key={row.id}>
-              <TableCell>{row.date}</TableCell>
-              <TableCell>{row.name}</TableCell>
-              <TableCell>{row.shipTo}</TableCell>
-              <TableCell>{row.paymentMethod}</TableCell>
-              <TableCell align="right">{row.amount}</TableCell>
+              <TableCell>{row.course}</TableCell>
+              <TableCell>{row.room}</TableCell>
+              <TableCell>{row.weekday}</TableCell>
+              <TableCell>{row.time}</TableCell>
+              <TableCell><Checkbox disabled name={row.id} color={"primary"} checked={row.isPrepared} /></TableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
-      <div className={classes.seeMore}>
+      <div classroom={classes.seeMore}>
         <Link color="primary" href="#" onClick={preventDefault}>
-          See more orders
+          See more classes
         </Link>
       </div>
     </React.Fragment>

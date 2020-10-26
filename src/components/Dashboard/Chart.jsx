@@ -1,33 +1,30 @@
 import React from 'react';
-import { useTheme } from '@material-ui/core/styles';
-import { LineChart, Line, XAxis, YAxis, Label, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, Label, ResponsiveContainer, LabelList } from 'recharts';
 import Title from './Title';
 
-// Generate Sales Data
-function createData(time, amount) {
-  return { time, amount };
+// Generate Attendance Data
+function createData(time, student) {
+  return { time, student };
 }
 
 const data = [
-  createData('00:00', 0),
-  createData('03:00', 300),
-  createData('06:00', 600),
-  createData('09:00', 800),
-  createData('12:00', 1500),
-  createData('15:00', 2000),
-  createData('18:00', 2400),
-  createData('21:00', 2400),
-  createData('24:00', undefined),
+  createData(1, 60),
+  createData(2, 28),
+  createData(3, 50),
+  createData(4, 59),
+  createData(5, 60),
+  createData(6, 55),
+  createData(7, 43),
+  createData(8, 37),
+  createData(9, 10),
 ];
 
 export default function Chart() {
-  const theme = useTheme();
-
   return (
     <React.Fragment>
-      <Title>Today</Title>
+      <Title>Software Project Management</Title>
       <ResponsiveContainer>
-        <LineChart
+        <BarChart
           data={data}
           margin={{
             top: 16,
@@ -36,18 +33,26 @@ export default function Chart() {
             left: 24,
           }}
         >
-          <XAxis dataKey="time" stroke={theme.palette.text.secondary} />
-          <YAxis stroke={theme.palette.text.secondary}>
+          <XAxis dataKey="time">
             <Label
-              angle={270}
-              position="left"
-              style={{ textAnchor: 'middle', fill: theme.palette.text.primary }}
+              value='Week'
+              offset={0}
+              position="insideBottom"
+            />
+          </XAxis>
+          <YAxis dataKey="student">
+            <Label
+              angle={-90}
+              position="insideLeft"
+              style={{ textAnchor: 'middle' }}
             >
-              Sales ($)
+              Student number
             </Label>
           </YAxis>
-          <Line type="monotone" dataKey="amount" stroke={theme.palette.primary.main} dot={false} />
-        </LineChart>
+          <Bar type="monotone" dataKey="student" fill="#82ca9d">
+            <LabelList dataKey="student" position="top"/>
+          </Bar>
+        </BarChart>
       </ResponsiveContainer>
     </React.Fragment>
   );

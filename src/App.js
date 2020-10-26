@@ -7,7 +7,7 @@ function App(props) {
     <div className="App">
       {/* <header>
         <img src={logo} className="App-logo" alt="logo" />
-        <p>{props.title}</p>
+        <p className="Title">{props.title}</p>
       </header> */}
       <Dashboard />
     </div>
