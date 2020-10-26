@@ -1,13 +1,15 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.scss';
+import Dashboard from './containers/Dashboard';
 
 function App(props) {
   return (
     <div className="App">
-      <header>
+      {/* <header>
         <img src={logo} className="App-logo" alt="logo" />
         <p>{props.title}</p>
-      </header>
+      </header> */}
+      <Dashboard />
     </div>
   );
 }
