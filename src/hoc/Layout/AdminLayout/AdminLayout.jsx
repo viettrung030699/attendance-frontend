@@ -10,7 +10,6 @@ const Layout = (props) => {
       <main
         style={{
           display: "flex",
-          margin: "auto -1rem 1rem"
         }}
       >
         <SideDrawer />
