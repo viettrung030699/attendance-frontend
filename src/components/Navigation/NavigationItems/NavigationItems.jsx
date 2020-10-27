@@ -21,7 +21,7 @@ const NavigationItem = (props) => {
         <ListItemIcon>
           {props.icon}
         </ListItemIcon>
-        <ListItemText primary={props.children} />
+        <ListItemText primary={props.children}/>
       </NavLink>
     </ListItem>
   )
