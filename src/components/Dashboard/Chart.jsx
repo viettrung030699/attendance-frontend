@@ -17,6 +17,9 @@ const data = [
   createData(7, 43),
   createData(8, 37),
   createData(9, 10),
+  createData(10, 30),
+  createData(11, 34),
+  createData(12, 51),
 ];
 
 export default function Chart() {

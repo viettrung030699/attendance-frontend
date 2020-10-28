@@ -9,9 +9,9 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Link from '@material-ui/core/Link';
-import Chart from '../../components/Dashboard/Chart';
-import Deposits from '../../components/Dashboard/Deposits';
-import Orders from '../../components/Dashboard/Orders';
+import Chart from '../../../components/Dashboard/Chart';
+import Deposits from '../../../components/Dashboard/Deposits';
+import Orders from '../../../components/Dashboard/Orders';
 
 function Copyright() {
   return (
@@ -30,7 +30,6 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
   },
-  appBarSpacer: theme.mixins.toolbar,
   container: {
     paddingTop: theme.spacing(4),
     paddingBottom: theme.spacing(4),
@@ -55,7 +54,6 @@ export default function Dashboard() {
         flex: "3"
       }}
     >
-      <div className={classes.appBarSpacer} />
       <Container maxWidth="lg" className={classes.container}>
         <Grid container spacing={3}>
           {/* Chart */}

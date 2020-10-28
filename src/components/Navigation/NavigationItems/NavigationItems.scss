@@ -7,6 +7,12 @@
   display: flex;
   width: 100%;
   align-items: center;
+
+  :hover,
+  :active,
+  .active {
+    background-color: #61DBFB;
+  }
 }
 
 .NavigationItem a {
@@ -18,3 +24,4 @@
   flex-direction: row;
   border-bottom: 4px solid transparent;
 }
+

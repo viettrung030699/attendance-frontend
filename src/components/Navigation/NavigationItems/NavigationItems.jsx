@@ -30,11 +30,11 @@ const NavigationItem = (props) => {
 const navigationItems = (props) => {
   return (
     <List className=''>
-      <NavigationItem link='/' exact icon={<DashboardIcon />}>Dashboard</NavigationItem>
-      <NavigationItem link='/classes' icon={<ClassIcon />}>Classes</NavigationItem>
-      <NavigationItem link='/sessions' icon={<AssignmentTurnedInIcon />}>Sessions</NavigationItem>
-      <NavigationItem link='/students' icon={<PeopleIcon />}>Students</NavigationItem>
-      <NavigationItem link='/reports' icon={<BarChartIcon />}>Reports</NavigationItem>
+      <NavigationItem link='/lecturer' exact icon={<DashboardIcon />}>Dashboard</NavigationItem>
+      <NavigationItem link='/lecturer/class' icon={<ClassIcon />}>Classes</NavigationItem>
+      <NavigationItem link='/lecturer/session' icon={<AssignmentTurnedInIcon />}>Sessions</NavigationItem>
+      <NavigationItem link='/lecturer/student' icon={<PeopleIcon />}>Students</NavigationItem>
+      <NavigationItem link='/lecturer/report' icon={<BarChartIcon />}>Reports</NavigationItem>
     </List>
   )
 }
