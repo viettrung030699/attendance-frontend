@@ -3,9 +3,7 @@ import { BarChart, Bar, XAxis, YAxis, Label, ResponsiveContainer, LabelList } fr
 import Title from './Title';
 
 // Generate Attendance Data
-function createData(time, student) {
-  return { time, student };
-}
+const createData = (time, student) => {{ time, student }};
 
 const data = [
   createData(1, 60),
