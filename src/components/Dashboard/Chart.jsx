@@ -21,8 +21,7 @@ const data = [
   createData(11, 34),
   createData(12, 51),
 ];
-
-export default function Chart() {
+export default const Chart = () => {
   return (
     <React.Fragment>
       <Title>Software Project Management</Title>
